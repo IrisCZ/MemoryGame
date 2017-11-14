@@ -215,18 +215,18 @@ function setBg(bg){
 }
 function setLevel(level){
   if(level === "easy"){
-    document.querySelector('.container').setAttribute("style", "grid-template-rows:repeat(3, 1fr)");
+    document.querySelector('.container').setAttribute("style", "grid-template-rows:[board-row-start aside-row-start] 1fr 1fr 1fr [board-row-end aside-row-end]");
     numberOfCards = 18;
     ids.push(1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9);
     return;
   }
   if(level === "hard"){
-    document.querySelector('.container').setAttribute("style", "grid-template-rows:repeat(5, 1fr)");
+    document.querySelector('.container').setAttribute("style", "grid-template-rows:[board-row-start aside-row-start] 1fr 1fr 1fr 1fr 1fr [board-row-end aside-row-end]");
     numberOfCards = 30;
     ids.push(1,2,3,4,5,6,7,8,9,10,11,12,13,14, 15,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
     return;
   }
-  document.querySelector('.container').setAttribute("style", "grid-template-rows:repeat(4, 1fr)");
+  document.querySelector('.container').setAttribute("style", "grid-template-rows:[board-row-start aside-row-start] 1fr 1fr 1fr 1fr [board-row-end aside-row-end]");
   numberOfCards = 24;
   ids.push(1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12);
 }

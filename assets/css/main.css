@@ -16,18 +16,18 @@ main {
   background-image: url("../img/bg3.jpg");
   background-size: cover;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: [board-column-start] 1fr 1fr 1fr 1fr 1fr 1fr [board-column-end aside-column-start] 1fr [aside-column-end];
+  grid-template-rows: [board-row-start aside-row-start] 1fr 1fr 1fr 1fr [board-row-end aside-row-end];
   line-height: 2rem;
   z-index: 0;
 }
 .container {
   padding: 2rem;
-  grid-column: span 6;
-  grid-row: span 6;
+  grid-column: board-column-start / board-column-end;
+  grid-row: board-row-start / board-row-end;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: [board-column-start] 1fr 1fr 1fr 1fr 1fr 1fr [board-column-end];
+  grid-template-rows: [board-row-start] 1fr 1fr 1fr 1fr [board-row-end];
   grid-gap: 1rem;
 }
 .card {
@@ -103,17 +103,20 @@ main {
 }
 
 aside {
-  display: grid;
-  grid-column: 7 / 7;
-  grid-row: 1 / 7;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  grid-column: aside-column-start / aside-column-end;
+  grid-row: aside-row-start / aside-row-end;
   text-align: center;
   padding: 1rem;
   background-color: rgba(0, 0, 0, .5);
 }
-.timerContainer{
+aside>div{
   width: 100%;
+}
+.timerContainer{
   height: 4rem;
-  grid-row: 2 / 2;
   border-radius: 4%;
   background-color: rgba(0, 0, 0, .5);
   box-shadow: 1px 3px 6px 3px #1d1d1d;
@@ -126,9 +129,6 @@ aside {
 .timerContainer span:first-child{
   font-size: 0.7rem;
   color: #fff;
-}
-.info div:last-child{
-  grid-row: 7/7;
 }
 button{
   width: 80%;
@@ -156,7 +156,6 @@ button{
 }
 .modal-window>div {
   width: 40%;
-  height: 70%;
   position: relative;
   margin: 5% auto;
   padding: 4rem;
@@ -167,7 +166,6 @@ button{
 }
 .modal-window .modalFame{
   display: grid;
-  height: 90%;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -240,7 +238,7 @@ button{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  line-height: 2em;
+  line-height: 3em;
   font-size: 0.8em;
 }
 .layerName{
