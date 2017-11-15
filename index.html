@@ -18,15 +18,18 @@
         <span>Hello stranger!</span>
       </div>
       <div class="timerContainer">
-        <span>Timer</span>
+        <!-- <span>Timer</span> -->
+        <img src="assets/img/time.png" class="icon" alt="time-icon">
         <p class="timeCounter"><time>00:00</time></p>
       </div>
       <div>
-        <span>Matches</span>
+        <!-- <span>Matches</span> -->
+        <img src="assets/img/matches.png" class="icon" alt="matches-icon">
         <div class="matchesCounter">0</div>
       </div>
       <div>
-        <span>Attempts</span>
+        <!-- <span>Attempts</span> -->
+        <img src="assets/img/attempts.png" class="icon" alt="attempts-icon">
         <div class="attemptsCounter">0</div>
 
       </div>
@@ -75,7 +78,7 @@
       <div class="layerBgs">
         <span>Choose a background:</span>
         <div class="bgs">
-          <div class="selector bg1" data-bg="bg1" onClick="toggleSelected(this)"></div>
+          <div class="selector bg1 selected" data-bg="bg1" onClick="toggleSelected(this)"></div>
           <div class="selector bg2" data-bg="bg2" onClick="toggleSelected(this)"></div>
           <div class="selector bg3" data-bg="bg3" onClick="toggleSelected(this)"></div>
         </div>
@@ -86,7 +89,7 @@
           <div class="selector easy" data-level="easy" onClick="toggleSelected(this)">
             <p>18</p>
           </div>
-          <div class="selector medium" data-level="medium" onClick="toggleSelected(this)">
+          <div class="selector medium selected" data-level="medium" onClick="toggleSelected(this)">
             <p>24</p>
           </div>
           <div class="selector hard" data-level="hard" onClick="toggleSelected(this)">

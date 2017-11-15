@@ -3,6 +3,7 @@ var container = document.querySelector('.container');
 var attemptsCounter = document.querySelector('.attemptsCounter');
 var matchesCounter = document.querySelector('.matchesCounter');
 var timeDelay = 600;
+var portraitSmall = (window.matchMedia("(orientation: portrait)").matches) && (window.innerWidth <= 1024);
 
 var cardsToCompare = [];
 var ids = [];
@@ -214,6 +215,12 @@ function setBg(bg){
   document.querySelector('main').style.backgroundImage  = "url('assets/img/bg2.jpg')";
 }
 function setLevel(level){
+  if (portraitSmall) {
+    document.querySelector('.container').setAttribute("style", "grid-template-rows:[board-row-start]  1fr 1fr 1fr 1fr 1fr [board-row-end]; grid-template-columns: [board-column-start] 1fr 1fr 1fr 1fr [board-column-end]");
+      numberOfCards = 20;
+    ids.push(1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,10);
+    return;
+  }
   if(level === "easy"){
     document.querySelector('.container').setAttribute("style", "grid-template-rows:[board-row-start aside-row-start] 1fr 1fr 1fr [board-row-end aside-row-end]");
     numberOfCards = 18;
